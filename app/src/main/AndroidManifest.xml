@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!--//页面注册-->
+        <activity android:name="menu.BottomNavigationActivty"></activity>
     </application>
 
 </manifest>

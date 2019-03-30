@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="colorPrimary">#008577</color><!--首要颜色-->
     <color name="colorPrimaryDark">#00574B</color><!--首要颜色暗色-->
     <color name="colorAccent">#D81B60</color><!--色彩强调-->
@@ -143,4 +144,17 @@
     <color name="palevioletred">#db7093</color><!--苍紫罗兰色 -->
     <color name="darkviolet">#9400d3</color><!--暗紫罗兰色 -->
     <color name="mediumorchid">#ba55d3</color><!--中粉紫色 -->
+
+
+
+
+    !--浅绿-->
+    <color name="colorLightGreen">#01bdab</color>
+    <!--红色-->
+    <color name="colorLightRed">#d53934</color>
+    <!--文字灰白色-->
+    <color name="colorTextGrey">#aaaaaa</color>
+    <!--背景白色-->
+    <color name="bg_white">#ffffff</color>
+
 </resources>
