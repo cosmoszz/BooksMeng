@@ -5,24 +5,24 @@
     tools:ignore="MissingDefaultResource">
     <item
         android:id="@+id/item_1"
-        android:icon="@drawable/icon_fenlei"
+        android:icon="@drawable/ic_library"
 
         android:title=""
     />
     <item
         android:id="@+id/item_2"
-        android:icon="@drawable/icon_home"
+        android:icon="@drawable/ic_store"
         android:title=""
       />
 
     <item
         android:id="@+id/item_3"
-        android:icon="@drawable/icon_library"
+        android:icon="@drawable/ic_classify"
         android:title=""
         />
     <item
         android:id="@+id/item_4"
-        android:icon="@drawable/icon_store"
+        android:icon="@drawable/ic_home"
         android:title=""
         />
 </menu>

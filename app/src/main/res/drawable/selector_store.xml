@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--暂不用-->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/icon_store" android:state_checked="false"></item>
-    <item android:drawable="@drawable/icon_store_light" android:state_checked="true"></item>
+    <item android:drawable="@drawable/ic_store" android:state_checked="false"></item>
+    <item android:drawable="@drawable/ic_store_light" android:state_checked="true"></item>
 </selector>
