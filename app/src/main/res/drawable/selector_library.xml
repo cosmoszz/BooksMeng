@@ -2,5 +2,5 @@
 <!--暂不用-->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/ic_library" android:state_checked="false"></item>
-    <item android:drawable="@drawable/ic_library_ligth" android:state_checked="true"></item>
+    <item android:drawable="@drawable/ic_library_light" android:state_checked="true"></item>
 </selector>
