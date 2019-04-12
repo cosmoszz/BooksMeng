@@ -23,4 +23,55 @@
 
     </android.support.design.widget.BottomNavigationView>
 
+    <LinearLayout
+    android:layout_width="80dp"
+    android:layout_height="40dp"
+    android:layout_above="@+id/widgetNavigationView"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="-5dp"
+
+    android:elevation="8dp" />
+
+    <ImageView
+    android:id="@+id/ma_iv_index"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:clickable="true"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="20dp"
+    android:elevation="8dp"
+    android:layout_weight="1"
+    android:scaleType="centerInside"
+    android:src="@drawable/current" />
+
 </android.support.percent.PercentRelativeLayout>
+
+<!--<FrameLayout-->
+<!--android:id="@+id/ma_frame_layout"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:layout_above="@id/widgetNavigationView"-->
+<!--android:background="@color/white" />-->
+<!--<LinearLayout-->
+<!--android:layout_width="80dp"-->
+<!--android:layout_height="40dp"-->
+<!--android:layout_above="@+id/widgetNavigationView"-->
+<!--android:layout_centerHorizontal="true"-->
+<!--android:layout_marginBottom="-5dp"-->
+
+<!--android:elevation="8dp" />-->
+
+<!--<ImageView-->
+<!--android:id="@+id/ma_iv_index"-->
+<!--android:layout_width="40dp"-->
+<!--android:layout_height="40dp"-->
+<!--android:clickable="true"-->
+<!--android:layout_alignParentBottom="true"-->
+<!--android:layout_centerHorizontal="true"-->
+<!--android:layout_marginBottom="20dp"-->
+<!--android:elevation="8dp"-->
+<!--android:layout_weight="1"-->
+<!--android:scaleType="centerInside"-->
+<!--android:src="@drawable/current" />-->
+

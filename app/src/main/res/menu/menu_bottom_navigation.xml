@@ -16,6 +16,12 @@
       />
 
     <item
+        android:id="@+id/item_mid"
+        android:icon="@null"
+        android:title=""
+        />
+
+    <item
         android:id="@+id/item_3"
         android:icon="@drawable/ic_classify"
         android:title=""
