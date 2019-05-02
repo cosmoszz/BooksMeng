@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.booksmeng">
 
+    //sd 读写
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    //网络
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,6 +26,10 @@
 
         <!--//页面注册-->
         <activity android:name="menu.BottomNavigationActivty"></activity>
+
+        <activity android:name=".ListViewTest"></activity>
+
+        <activity android:name="classity.ClassityMainActivity"></activity>
     </application>
 
 </manifest>

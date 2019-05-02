@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 
+import classity.ClassityMainActivity;
 import menu.BottomNavigationActivty;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // add by  zhaozhen 20190330  启动其他页面
         Intent intent=new Intent();
-        intent.setClass(MainActivity.this, BottomNavigationActivty.class);
+        //intent.setClass(MainActivity.this, BottomNavigationActivty.class);
+        intent.setClass(MainActivity.this, ClassityMainActivity.class);
         startActivity(intent);
 
     }

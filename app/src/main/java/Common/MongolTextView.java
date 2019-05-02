@@ -2,9 +2,13 @@ package Common;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.widget.TextView;
+
+import com.example.administrator.booksmeng.R;
 
 public class MongolTextView extends android.support.v7.widget.AppCompatTextView {
     private TextPaint textPaint;
@@ -42,6 +46,8 @@ public class MongolTextView extends android.support.v7.widget.AppCompatTextView 
         textPaint.setColor(getCurrentTextColor());
         textPaint.drawableState = getDrawableState();
 
+
+
         canvas.save();
 
         // flip and rotate the canvas
@@ -51,8 +57,25 @@ public class MongolTextView extends android.support.v7.widget.AppCompatTextView 
         //canvas.scale(1, -1);
         //canvas.translate(getCompoundPaddingLeft(), getExtendedPaddingTop());
 
-        getLayout().draw(canvas);
+        //20190427 设置文字居中注释
+        //getLayout().draw(canvas);
+        //设置水平居中
+        textPaint.setTextAlign(Paint.Align.CENTER);
 
-        canvas.restore();
+        //设置垂直居中
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+// 计算文字高度 
+        float fontHeight = fontMetrics.bottom - fontMetrics.top;
+// 计算文字baseline 
+        float textBaseY = getMeasuredHeight() - (getMeasuredHeight() - fontHeight) / 2 - fontMetrics.bottom;
+        //textBaseY=(getMeasuredHeight() - (textPaint.descent() - textPaint.ascent())) / 2 - textPaint.ascent();
+//        float textBaseY = bounds.height() - (bounds.height() - fontHeight) / 2 - fontMetrics.bottom;
+
+        //当前文字
+
+        canvas.drawText(this.getText().toString(), getMeasuredWidth() / 2, textBaseY- fontHeight / 2, textPaint);
+
+        //20190427 设置文字居中注释
+        //canvas.restore();
     }
 }
