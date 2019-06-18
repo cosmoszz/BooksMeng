@@ -30,6 +30,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import classify.ClassifyMain;
 
 public class BottomNavigationActivty extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener,
@@ -45,6 +46,9 @@ public class BottomNavigationActivty extends AppCompatActivity
     ImageView imageView;
 
     Fragment_classify fragment_classify;
+
+    //ClassifyMain classifyMain;
+
     Fragment_home fragment_home;
     Fragment_library fragment_library;
     Fragment_store fragment_store;
@@ -77,6 +81,8 @@ public class BottomNavigationActivty extends AppCompatActivity
     {
         fragmentList=new ArrayList<>();
         fragment_classify=new Fragment_classify();
+        //classifyMain=new ClassifyMain();
+
         fragment_home=new Fragment_home();
         fragment_library=new Fragment_library();
         fragment_store=new Fragment_store();
@@ -86,6 +92,7 @@ public class BottomNavigationActivty extends AppCompatActivity
         {
             fragmentList.add(fragment_classify);
         }
+
         if(!fragmentList.contains(fragment_home))
         {
             fragmentList.add(fragment_home);

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         // add by  zhaozhen 20190330  启动其他页面
         Intent intent=new Intent();
         //intent.setClass(MainActivity.this, BottomNavigationActivty.class);
-        intent.setClass(MainActivity.this, classify.ClassifyMain.class);
+        intent.setClass(MainActivity.this, menu.BottomNavigationActivty.class);
         startActivity(intent);
 
     }

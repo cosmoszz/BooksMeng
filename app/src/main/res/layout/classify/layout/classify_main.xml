@@ -1,58 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout android:layout_width="match_parent"
+    <!--不用此xml  加载为classify/layout
+            中的fragment_classify-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    >
     <LinearLayout
-        android:id="@+id/firstLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="#ADFF2F"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
 
-        >
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="200dp"
+            android:background="@color/blue">
+
+        </LinearLayout>
         <ListView
             android:id="@+id/firstHead"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+
+            >
 
         </ListView>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/secondLayout"
-        android:layout_width="40dp"
-        android:background="#FDFF2F"
-        android:layout_toRightOf="@id/firstLayout"
-        android:layout_height="match_parent"
-        >
+
         <ListView
             android:id="@+id/secondHead"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            >
 
         </ListView>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/contentLayout"
-        android:layout_toRightOf="@+id/secondLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="#fff"
-        android:layout_weight="1">
 
-        <ScrollView
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            >
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <LinearLayout
+            <ListView
+                android:id="@+id/contentListView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <Common.ClasstityGridViewForScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:numColumns="2"
-                    android:stretchMode="spacingWidthUniform">
-                </Common.ClasstityGridViewForScrollView>
-            </LinearLayout>
-        </ScrollView>
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                >
+
+            </ListView>
+        </LinearLayout>
+        </RelativeLayout>
+
 
     </LinearLayout>
-</RelativeLayout>
+
+
+
+</LinearLayout>

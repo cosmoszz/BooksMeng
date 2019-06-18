@@ -22,6 +22,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+* 不用此程序  加载为menu中的Fragment_classify
+ */
 public class ClassifyMain extends AppCompatActivity {
     //数据
     private List<String> firstListData;
@@ -44,7 +47,7 @@ public class ClassifyMain extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fresco.initialize(this);
-        setContentView(R.layout.classify_main_1);
+        setContentView(R.layout.classify_main);
         InitData();
         InitView();
         LoadData();
