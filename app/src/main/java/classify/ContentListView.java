@@ -1,38 +1,40 @@
-package classity;
+package classify;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
+
 
 import com.example.administrator.booksmeng.R;
 
 import java.util.List;
 
-//左侧的菜单
-public class MenuAdapter extends BaseAdapter {
-    private int selectItem=0;
-    private Context context;
-    private List<String> list;
+import Common.ClasstityGridViewForScrollView;
 
-    public MenuAdapter(Context context,List<String> list)
+public class ContentListView extends BaseAdapter {
+    private Context context;
+    private List<ContentListData> contentListData;
+
+    private List<CategoryBean.DataBean> list;
+
+    public ContentListView()
+    {
+
+    }
+
+    public ContentListView(Context context,List<CategoryBean.DataBean> list)
     {
         this.context=context;
         this.list=list;
     }
 
-    public int getSelectItem()
-    {
-        return this.selectItem;
-    }
-    public void setSelectItem(int selectItem)
-    {
-        this.selectItem=selectItem;
-    }
+//    public ContentListView(Context context, List<ContentListData> contentListData) {
+//        this.context = context;
+//        this.contentListData = contentListData;
+//    }
+
     /**
      * How many items are in the data set represented by this Adapter.
      *
@@ -40,7 +42,8 @@ public class MenuAdapter extends BaseAdapter {
      */
     @Override
     public int getCount() {
-        return this.list.size();
+
+        return list.size();
     }
 
     /**
@@ -90,8 +93,8 @@ public class MenuAdapter extends BaseAdapter {
         if(convertView==null)
         {
             viewHolder=new ViewHolder();
-            convertView= View.inflate(this.context, R.layout.item_menu,null);
-            viewHolder.textView=(TextView)convertView.findViewById(R.id.item_name);
+            convertView=View.inflate(this.context, R.layout.content_listview,null);
+            viewHolder.classtityGridViewForScrollView=convertView.findViewById(R.id.GridViewItem);
             convertView.setTag(viewHolder);
         }
         else
@@ -99,25 +102,18 @@ public class MenuAdapter extends BaseAdapter {
             viewHolder=(ViewHolder)convertView.getTag();
         }
 
-        if(position==this.selectItem)
-        {
-            Log.d("MenuAdapterGetView",String.valueOf(position));
-            viewHolder.textView.setBackgroundColor(Color.WHITE);
-            viewHolder.textView.setTextColor(context.getResources().getColor(R.color.green));
-        }
-        else
-        {
-            Log.d("MenuAdapterGetView",String.valueOf(position));
-            Log.d("MenuAdapterGetSelect",String.valueOf(this.selectItem));
-            viewHolder.textView.setBackgroundColor(context.getResources().getColor(R.color.blueviolet));
-            viewHolder.textView.setTextColor(context.getResources().getColor(R.color.black));
-        }
-        viewHolder.textView.setText(list.get(position));
+       // ContentListViewItemAdapter contentListViewItemAdapter=new ContentListViewItemAdapter(this.context,this.contentListData);
+        CategoryBean.DataBean dataBean=list.get(position);
+        List<CategoryBean.DataBean.DataListBean> dataListBeanGetView = dataBean.getDataList();;
+        ContentListViewItemAdapter contentListViewItemAdapter=new ContentListViewItemAdapter(this.context,dataListBeanGetView);
+
+        viewHolder.classtityGridViewForScrollView.setAdapter(contentListViewItemAdapter);
+
         return convertView;
     }
-    private static  class ViewHolder
-    {
-        private TextView textView;
 
+    public static class ViewHolder
+    {
+        ClasstityGridViewForScrollView classtityGridViewForScrollView;
     }
 }

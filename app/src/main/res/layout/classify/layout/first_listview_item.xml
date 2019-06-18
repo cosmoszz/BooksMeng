@@ -4,15 +4,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     <Common.MongolTextView
-        android:id="@+id/item_name"
-        android:layout_width="match_parent"
+        android:id="@+id/listViewText"
+        android:layout_width="150dp"
         android:layout_height="70dp"
-
-
         android:text=""
         android:gravity="center"
         android:textSize="15dp"
+        />
+    <ImageView
+        android:id="@+id/bluePic"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
 
-        android:textColor="@color/green"/>
+        android:src="@drawable/blue_background"/>
 
 </LinearLayout>

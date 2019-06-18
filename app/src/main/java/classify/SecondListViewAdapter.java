@@ -1,37 +1,26 @@
-package classity;
+package classify;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+
 import com.example.administrator.booksmeng.R;
 
 import java.util.List;
 
-//左侧的菜单
-public class MenuAdapter extends BaseAdapter {
-    private int selectItem=0;
+public class SecondListViewAdapter extends BaseAdapter {
     private Context context;
-    private List<String> list;
+    private List<String> dataList;
+    private int selectPosition;
 
-    public MenuAdapter(Context context,List<String> list)
+    public SecondListViewAdapter(Context context,List<String> dataList)
     {
         this.context=context;
-        this.list=list;
-    }
-
-    public int getSelectItem()
-    {
-        return this.selectItem;
-    }
-    public void setSelectItem(int selectItem)
-    {
-        this.selectItem=selectItem;
+        this.dataList=dataList;
     }
     /**
      * How many items are in the data set represented by this Adapter.
@@ -40,7 +29,7 @@ public class MenuAdapter extends BaseAdapter {
      */
     @Override
     public int getCount() {
-        return this.list.size();
+        return dataList.size();
     }
 
     /**
@@ -52,7 +41,7 @@ public class MenuAdapter extends BaseAdapter {
      */
     @Override
     public Object getItem(int position) {
-        return list.get(position);
+        return dataList.get(position);
     }
 
     /**
@@ -87,37 +76,51 @@ public class MenuAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder=null;
+        //加载android 资源
         if(convertView==null)
         {
+            convertView=View.inflate(this.context,R.layout.first_listview_item,null);
             viewHolder=new ViewHolder();
-            convertView= View.inflate(this.context, R.layout.item_menu,null);
-            viewHolder.textView=(TextView)convertView.findViewById(R.id.item_name);
+            viewHolder.textView=(TextView)convertView.findViewById(R.id.listViewText);
             convertView.setTag(viewHolder);
         }
         else
         {
-            viewHolder=(ViewHolder)convertView.getTag();
+            viewHolder= (ViewHolder) convertView.getTag();
         }
 
-        if(position==this.selectItem)
+        //做颜色背景修改
+        if(position==this.getSelectPosition())
         {
-            Log.d("MenuAdapterGetView",String.valueOf(position));
-            viewHolder.textView.setBackgroundColor(Color.WHITE);
-            viewHolder.textView.setTextColor(context.getResources().getColor(R.color.green));
+            //选中
+
+            //viewHolder.textView.setBackgroundResource(R.drawable.flower_background);
+
+            viewHolder.textView.setTextColor(context.getResources().getColor(R.color.blue));
         }
         else
         {
-            Log.d("MenuAdapterGetView",String.valueOf(position));
-            Log.d("MenuAdapterGetSelect",String.valueOf(this.selectItem));
-            viewHolder.textView.setBackgroundColor(context.getResources().getColor(R.color.blueviolet));
+            //未选中
+            viewHolder.textView.setBackgroundResource(0);
+            viewHolder.textView.setBackgroundColor(context.getResources().getColor(R.color.white));
             viewHolder.textView.setTextColor(context.getResources().getColor(R.color.black));
         }
-        viewHolder.textView.setText(list.get(position));
+        //赋值
+        viewHolder.textView.setText(dataList.get(position));
         return convertView;
     }
-    private static  class ViewHolder
-    {
-        private TextView textView;
 
+    public int getSelectPosition() {
+        return selectPosition;
+    }
+
+    public void setSelectPosition(int selectPosition) {
+        this.selectPosition = selectPosition;
+    }
+
+    private  static  class ViewHolder
+    {
+        TextView textView;
+        //ImageView imageView;
     }
 }

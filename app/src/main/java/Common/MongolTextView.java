@@ -6,15 +6,18 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.TextView;
 
-import com.example.administrator.booksmeng.R;
+
 
 public class MongolTextView extends android.support.v7.widget.AppCompatTextView {
     private TextPaint textPaint;
+    private Context context;
 
     public MongolTextView(Context context, AttributeSet attributeSet, int defstyle){
         super(context,attributeSet,defstyle);
+        this.context=context;
         init();
     }
     public MongolTextView(Context context, AttributeSet attrs) {
@@ -38,6 +41,7 @@ public class MongolTextView extends android.support.v7.widget.AppCompatTextView 
     {
         super.onMeasure(widthMeasureSpec,heightMeasureSpec);
         setMeasuredDimension(getMeasuredHeight(),getMeasuredWidth());
+
     }
     @Override
     protected  void onDraw(Canvas canvas)
@@ -45,8 +49,6 @@ public class MongolTextView extends android.support.v7.widget.AppCompatTextView 
         textPaint = getPaint();
         textPaint.setColor(getCurrentTextColor());
         textPaint.drawableState = getDrawableState();
-
-
 
         canvas.save();
 
@@ -62,6 +64,7 @@ public class MongolTextView extends android.support.v7.widget.AppCompatTextView 
         //设置水平居中
         textPaint.setTextAlign(Paint.Align.CENTER);
 
+        float fontWeight=textPaint.measureText(this.getText().toString());
         //设置垂直居中
         Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
 // 计算文字高度 
@@ -73,9 +76,12 @@ public class MongolTextView extends android.support.v7.widget.AppCompatTextView 
 
         //当前文字
 
-        canvas.drawText(this.getText().toString(), getMeasuredWidth() / 2, textBaseY- fontHeight / 2, textPaint);
+        //canvas.drawText(this.getText().toString(), getMeasuredWidth() / 2, textBaseY- fontHeight / 2, textPaint);
+        canvas.drawText(this.getText().toString(), getMeasuredHeight()/ 2, (getMeasuredWidth()) / 2, textPaint);
 
         //20190427 设置文字居中注释
         //canvas.restore();
+
+
     }
 }

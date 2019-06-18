@@ -30,6 +30,8 @@
         <activity android:name=".ListViewTest"></activity>
 
         <activity android:name="classity.ClassityMainActivity"></activity>
+
+        <activity android:name="classify.ClassifyMain"></activity>
     </application>
 
 </manifest>

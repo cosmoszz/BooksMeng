@@ -14,6 +14,12 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#EDECEC" />
+        <ListView
+            android:id="@+id/lv_menu_child"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#EDECEC" />
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
